@@ -1,0 +1,139 @@
+html,body{
+	width: 100%;
+	height: 100vh;
+	margin: 0;
+	padding: 0;
+	background-color: #483C6C;
+	overflow: hidden;
+}
+body{
+	background: url(./imgs/bg.png) no-repeat;
+	background-size: 100%;
+}
+.holder2048 {
+	width: 280px;
+	height: 280px;
+	position: relative;
+	margin: 0 auto;
+}
+.holder2048>.container {
+	width: 280px;
+	height: 280px;
+	position: relative;
+	margin: 0 auto;
+	border-style: none;
+	border: 2px solid #BBADA0;
+	background-color: #CCC0B3;
+	box-shadow: 0 20px 40px rgba(255,33,124,.2);
+}
+.holder2048>.container>.mask {
+	width: 70px;
+	height: 70px;
+	position: absolute;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	border: 2px solid #BBADA0;
+}
+.holder2048>.container>.box {
+	width: 66px;
+	height: 66px;
+	position: absolute;
+	font-size: 1.25rem;
+	font-weight: bold;
+	text-align: center;
+	line-height: 70px;
+}
+.holder2048>.container>.box[value='2'] {
+	background-color: #FFF8D7;
+	color: #776E65;
+}
+.holder2048>.container>.box[value='4'] {
+	background-color: #FFED97;
+	color: #776E65;
+}
+.holder2048>.container>.box[value='8'] {
+	background-color: #FFBB77;
+	color: #776E65;
+}
+.holder2048>.container>.box[value='16'] {
+	background-color: #FF9224;
+	color: #776E65;
+}
+.holder2048>.container>.box[value='32'] {
+	background-color: #FF5809;
+	color: #8E2E00;
+}
+.holder2048>.container>.box[value='64'] {
+	background-color: #EA0000;
+	color: #810000;
+}
+.holder2048>.container>.box[value='128'] {
+	background-color: #FFFF37;
+	color: #8D8D00;
+}
+.holder2048>.container>.box[value='256'] {
+	background-color: #E8CC42;
+	color: #806A00;
+}
+.holder2048>.container>.box[value='512'] {
+	background-color: #E1E100;
+	color: #787800;
+}
+.holder2048>.container>.box[value='1024'] {
+	background-color: #00C400;
+	color: #006D00;
+}
+.holder2048>.container>.box[value='2048'] {
+	background-color: #9AFF02;
+	color: #4C7E00;
+}
+.holder2048>.container>.box[value='4096'] {
+	background-color: #00FFFF;
+	color: #007E7E;
+}
+.holder2048>.container>.box[value='8192'] {
+	background-color: #AA0FD8;
+	color: #55006D;
+}
+.title{
+	font-size: 1.5rem;
+	color: #ffffff;
+	position: relative;
+	padding: 16px 0;
+	text-align: center;
+}
+.f5{
+	padding: 16px 15px;
+	text-align: right;
+}
+.f5-btn{
+	width: 40px;
+	height: 40px;
+	display: inline-block;
+	border-radius: 100%;
+	background: url(./imgs/f5.png) no-repeat center;
+	background-size: 100%;
+	box-shadow: 0 5px 15px rgba(255,33,124,.4);
+}
+.ewm-box{
+	position: fixed;
+	bottom: 10px;
+	left: 50%;
+	transform: translate(-50%,0);
+}
+.ewm-img{
+	width: 88px;
+	height: 88px;
+	display: inline-block;
+}
+.ewm-img img{
+	width: 100%;
+	border: none;
+}
+.ewm-text{
+	font-size: 0.75rem;
+	color: #ffffff;
+	padding: 5px 0;
+	text-align: center;
+}
