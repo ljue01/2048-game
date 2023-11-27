@@ -137,3 +137,6 @@ body{
 	padding: 5px 0;
 	text-align: center;
 }
+#start,#close{
+	cursor: pointer;
+}
