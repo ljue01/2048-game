@@ -132,6 +132,34 @@ html,body{
 	border-radius: 50%;
 	cursor: help;
 	margin-left: 0.625rem;
+	position: relative;
+}
+.help-info-box{
+	display: none;
+	position: relative;
+}
+.help-info-box:after{
+	content: '电脑端使用上下左右键操作';
+	width: 6rem;
+	padding: 4px 8px;
+	font-size: 0.75rem;
+	color: #ffffff;
+	background-color: rgba(0,0,0,0.4);
+	border-radius: 0.125rem;
+	position: absolute;
+	top: -20px;
+  left: 12px;
+	text-align: left;
+}
+.help-info-box:before{
+	content: '';
+	width: 0;
+	height: 0;
+	border: 6px solid transparent;
+	border-right: 8px solid rgba(0,0,0,0.4);
+	position: absolute;
+	top: -6px;
+  left: -2px;
 }
 .f5{
 	padding: 16px;
@@ -146,11 +174,17 @@ html,body{
 	background-size: 100%;
 	box-shadow: 0 5px 15px rgba(255,33,124,.4);
 }
-.ewm-box{
+.ewm-box,.ewm-box-2{
 	position: fixed;
-	bottom: 10px;
-	left: 50%;
+	top: 0;
+	right: 10.5rem;
+	padding: 0.625rem;
 	transform: translate(-50%,0);
+	background-color: #ffffff;
+	border-radius: 0 0 0.25rem 0.25rem;
+}
+.ewm-box-2{
+	right: 2.5rem;
 }
 .ewm-img{
 	width: 88px;
@@ -166,7 +200,17 @@ html,body{
 	color: #ffffff;
 	padding: 5px 0;
 	text-align: center;
+	color: #333333;
+}
+.ewm-text p{
+	margin: 0;
+	padding: 0;
 }
 #start,#close{
 	cursor: pointer;
+}
+@media screen and (max-width:960px){
+	.help-info,.ewm-box,.ewm-box-2{
+		display: none;
+	}
 }

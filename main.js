@@ -1,4 +1,38 @@
 (function($) {
+	
+	/**
+	 * 阻止页面上下拉滑动*
+	**/
+	document.body.addEventListener('touchmove', function (e) {
+	e.preventDefault(); //阻止下拉滑动的效果
+	}, {passive: false}); //passive 参数不能省略，用来兼容ios和android
+	
+	/**
+	* 关闭&重新开始
+	**/
+	$('body').delegate('#close','click',function(){
+		$(this).parents('#pop').remove();
+	});
+	$('body').delegate('#start','click',function(){
+		$(this).parents('#pop').remove();
+	});
+	
+	// 玩法显示隐藏
+	let hover_time, out_time; // 定义悬停和离开的延时量
+	$(".help-info").hover(function(){
+	    clearTimeout(out_time); // 清除离开的延时
+	    that = this; // 重定this指针
+	    hover_time = setTimeout(function(){
+	      $(that).next('.help-info-box').fadeIn(200);
+	    },300); // 定时鼠标悬停300ms后滑出
+	},function(){
+	    clearTimeout(hover_time); // 清除悬停的延时
+	    that = this; // 重定this指针
+	    out_time = setTimeout(function(){
+	      $(that).next('.help-info-box').fadeOut(200);
+	    },100); // 定时鼠标离开100ms后隐藏
+	});
+	
 	/* 开始摸鱼吧 */
 	var defaults = {
 		delay: 180 // 模块移动速度
@@ -526,22 +560,5 @@
 			return isMoved;
 		}
 	}
-
-	/**
-	 * 阻止页面上下拉滑动*
-	**/
-	document.body.addEventListener('touchmove', function (e) {
-	e.preventDefault(); //阻止下拉滑动的效果
-	}, {passive: false}); //passive 参数不能省略，用来兼容ios和android
-	
-	/**
-	* 关闭&重新开始
-	**/
-	$('body').delegate('#close','click',function(){
-		$(this).parents('#pop').remove();
-	});
-	$('body').delegate('#start','click',function(){
-		$(this).parents('#pop').remove();
-	});
 
 })(jQuery);
